@@ -18,8 +18,9 @@ void	free_array_exit(char **str_array, int index, int exit_code)
 	int	i;
 
 	i = 0;
-	while (i < index && str_array[i])
+	while (i <= index && str_array[i])
 		free(str_array[i++]);
+	free(str_array);
 	if (exit_code)
 		ft_putstr_fd("Error\n", 2);
 	exit(exit_code);
